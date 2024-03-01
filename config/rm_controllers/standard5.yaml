@@ -91,22 +91,22 @@ controllers:
     imu_name: "gimbal_imu"
     feedforward:
       yaw:
-        resistance: 0.16
+        resistance: 0.14
         velocity_saturation_point: 0.34
         effort_saturation_point: 0.052
         k_chassis_vel: 0.038
-        k_v: 0.0485
-        k_a: 0.015
+        k_v: 0.0
+        k_a: 0.0
       pitch:
-        resistance: 0.1
-        velocity_saturation_point: 0.34
-        effort_saturation_point: 0.052
-        k_v: 0.1
+        resistance: 0.0
+        velocity_saturation_point: 999.0
+        effort_saturation_point: 999.
+        k_v: 0.0
         k_a: 0.0
         gravity_compensation:
-          gravity: 12.2625
+          gravity: 9.
           enable_gravity_compensation: false
-          mass_origin: [ 0.0293,0.0,0.01 ]
+          mass_origin: [ 0.032,0.0,0.008 ]
     bullet_solver:
       resistance_coff_qd_10: 0.45
       resistance_coff_qd_15: 0.0
@@ -118,7 +118,8 @@ controllers:
       dt: 0.001
       timeout: 0.001
       publish_rate: 50
-      max_track_target_vel: 2.5
+      max_track_target_vel: 4.5
+      windmill_radius: 0.7
 
   shooter_controller:
     type: rm_shooter_controllers/Controller
