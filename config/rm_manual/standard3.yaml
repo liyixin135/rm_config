@@ -37,9 +37,9 @@ rm_manual:
     gyro_rotate_reduction: 0.4
   gimbal:
     topic: "/controllers/gimbal_controller/command"
-    max_yaw_vel: 12.56
-    max_pitch_vel: 8.37
-    gimbal_scale: 8
+    max_yaw_vel: 12.56  # yaw灵敏度
+    max_pitch_vel: 8.37  # pitch灵敏度
+    gimbal_scale: 8  # 遥控器使用的时候读取鼠标移动的值后乘以一个系数等于实际的pitch，yaw，它就是这个系数
     track_timeout: 0.5
     finish_turning_threshold: 2.9
     target_cost_function:
