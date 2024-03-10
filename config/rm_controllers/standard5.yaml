@@ -118,7 +118,7 @@ controllers:
       dt: 0.001
       timeout: 0.001
       publish_rate: 50
-      max_track_target_vel: 4.5
+      max_track_target_vel: 10.0
       windmill_radius: 0.7
 
   shooter_controller:
