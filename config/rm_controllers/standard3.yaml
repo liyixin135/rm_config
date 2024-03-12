@@ -83,14 +83,16 @@ controllers:
       pid: { p: 7.5, i: 40., d: 0.4, i_clamp_max: 0.2, i_clamp_min: -0.2, antiwindup: true, publish_state: true }
       k_chassis_vel: 0.045
       k_v: 0.0485
+      k_a: 0.015
       resistance_compensation:
-        resistance: 0.15
+        resistance: 0.0
         velocity_dead_zone: 0.3
         effort_dead_zone: 0.06
     pitch:
       joint: "pitch_joint"
       pid: { p: 21.0, i: 70.0, d: 0.55, i_clamp_max: 0.5, i_clamp_min: -0.5, antiwindup: true, publish_state: true }
-      k_v: 0.3
+      k_v: 0.1
+      k_a: 0.01
     chassis_vel:
       num_data: 20
       debug: true
@@ -110,7 +112,7 @@ controllers:
       dt: 0.001
       timeout: 0.001
       publish_rate: 50
-      max_track_target_vel: 4.5
+      max_track_target_vel: 0.9
 
   shooter_controller:
     type: rm_shooter_controllers/Controller
