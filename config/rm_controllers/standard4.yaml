@@ -124,7 +124,7 @@ controllers:
       dt: 0.001
       timeout: 0.001
       publish_rate: 50
-      max_track_target_vel: 8.0
+      max_track_target_vel: 20.0
 
   shooter_controller:
     type: rm_shooter_controllers/Controller
