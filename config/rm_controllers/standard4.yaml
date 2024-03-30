@@ -44,7 +44,7 @@ controllers:
     twist_angular: 0.5233
     max_odom_vel: 10.0
     timeout: 0.1
-    pid_follow: { p: 0.0, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
+    pid_follow: { p: 6.5, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true }
     twist_covariance_diagonal: [ 0.001, 0.001, 0.001, 0.001, 0.001, 0.001 ]
 
     # OmniController
@@ -80,16 +80,16 @@ controllers:
     type: rm_gimbal_controllers/Controller
     yaw:
       joint: "yaw_joint"
-      pid: { p: 15.0, i: 5.0, d: 0.8, i_clamp_max: 0.25, i_clamp_min: -0.25, antiwindup: true, publish_state: true }
+      pid: { p: 18.0, i: 1.0, d: 0.5, i_clamp_max: 0.1, i_clamp_min: -0.1, antiwindup: true, publish_state: true }
       k_chassis_vel: 0.03
       k_v: 0.0
       resistance_compensation:
         resistance: 0.0
-        velocity_saturation_point: 0.34
-        effort_saturation_point: 0.052
+        velocity_saturation_point: 0.0
+        effort_saturation_point: 0.00
     pitch:
       joint: "pitch_joint"
-      pid: { p: 28.0, i: 60.0, d: 0.6, i_clamp_max: 0.3, i_clamp_min: -0.3, antiwindup: true, publish_state: true }
+      pid: { p: 20.0, i: 20.0, d: 0.5, i_clamp_max: 0.2, i_clamp_min: -0.2, antiwindup: true, publish_state: true }
       k_v: 0.09
     chassis_vel:
       num_data: 30
@@ -106,11 +106,13 @@ controllers:
       resistance_coff_qd_18: 0.55
       resistance_coff_qd_30: 0.0
       g: 9.81
-      delay: 0.13
+      delay: 0.099574
       dt: 0.001
       timeout: 0.001
       publish_rate: 50
-      max_track_target_vel: 20
+      max_track_target_vel: 10.0
+      angle1: 40.0
+      angle2: 2.0
 
   shooter_controller:
     type: rm_shooter_controllers/Controller
@@ -128,7 +130,7 @@ controllers:
       pid: { p: 25.0, i: 0.0, d: 0.75, i_clamp_max: 0.0, i_clamp_min: 0.0, antiwindup: true, publish_state: true }
     push_per_rotation: 9
     push_qd_threshold: 0.90
-    block_effort: 3.0
+    block_effort: 2.2
     block_speed: 0.1
     block_duration: 0.05
     block_overtime: 0.5

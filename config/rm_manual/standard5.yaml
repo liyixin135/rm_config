@@ -36,8 +36,8 @@ rm_manual:
       - [ 80.0,15.0 ]
       - [ 100.0,18.0 ]
       - [ 220.0,20.0 ]
-    gyro_move_reduction: 0.4
-    gyro_rotate_reduction: 0.4
+    gyro_move_reduction: 0.75
+    gyro_rotate_reduction: 0.6
   gimbal:
     topic: "/controllers/gimbal_controller/command"
     max_yaw_vel: 12.56
