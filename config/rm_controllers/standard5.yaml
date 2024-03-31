@@ -81,17 +81,26 @@ controllers:
     type: rm_gimbal_controllers/Controller
     yaw:
       joint: "yaw_joint"
-      pid: { p: 6.0, i: 22.0, d: 0.5, i_clamp_max: 0.16, i_clamp_min: -0.16, antiwindup: true, publish_state: false }
+      pid: { p: 0.45, i: 20.0, d: 0.0, i_clamp_max: 0.15, i_clamp_min: -0.15, antiwindup: true, publish_state: true }
       k_chassis_vel: 0.032
-      k_v: 0.05
+      k_v: 1.0
       resistance_compensation:
-        resistance: 0.16
-        velocity_saturation_point: 0.34
-        effort_saturation_point: 0.052
+        resistance: 0.09
+        velocity_dead_zone: 0.3
+        effort_dead_zone: 0.06
     pitch:
       joint: "pitch_joint"
-      pid: { p: 22.0, i: 75, d: 0.6, i_clamp_max: 0.2, i_clamp_min: -0.2, antiwindup: true, publish_state: false }
-      k_v: 0.0
+      pid: { p: 0.5, i: 8.0, d: 0.0, i_clamp_max: 0.1, i_clamp_min: -0.1, antiwindup: true, publish_state: true }
+      k_v: 1.0
+    pid_yaw_pos: { p: 30.0, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true, max_output: 99 }
+    pid_pitch_pos: { p: 42.0, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true, max_output: 99 }
+    gimbal_des_vel:
+      yaw:
+        lp_cutoff_frequency: 100
+        lp_debug: true
+      pitch:
+        lp_cutoff_frequency: 5
+        lp_debug: true
     chassis_vel:
       num_data: 30
       debug: true
@@ -107,13 +116,49 @@ controllers:
       resistance_coff_qd_18: 0.55
       resistance_coff_qd_30: 0.01
       g: 9.81
-      delay: 0.13446
+      delay: 0.099574
       dt: 0.001
       timeout: 0.001
-      angle1: 40.0
-      angle2: 2.0
       publish_rate: 50
-      max_track_target_vel: 10.0
+      max_track_target_vel: 15.0
+
+#  gimbal_controller:
+#    type: rm_gimbal_controllers/Controller
+#    yaw:
+#      joint: "yaw_joint"
+#      pid: { p: 12.0, i: 22.0, d: 0.6, i_clamp_max: 0.16, i_clamp_min: -0.16, antiwindup: true, publish_state: false }
+#      k_chassis_vel: 0.032
+#      k_v: 0.05
+#      resistance_compensation:
+#        resistance: 0.0
+#        velocity_saturation_point: 0.34
+#        effort_saturation_point: 0.052
+#    pitch:
+#      joint: "pitch_joint"
+#      pid: { p: 22.0, i: 75, d: 0.6, i_clamp_max: 0.2, i_clamp_min: -0.2, antiwindup: true, publish_state: false }
+#      k_v: 0.0
+#    chassis_vel:
+#      num_data: 30
+#      debug: true
+#    imu_name: "gimbal_imu"
+#    feedforward:
+#      gravity: 12.2625
+#      enable_gravity_compensation: false
+#      mass_origin: [ 0.0293,0.0,0.01 ]
+#    bullet_solver:
+#      resistance_coff_qd_10: 0.45
+#      resistance_coff_qd_15: 0.01
+#      resistance_coff_qd_16: 0.7
+#      resistance_coff_qd_18: 0.55
+#      resistance_coff_qd_30: 0.01
+#      g: 9.81
+#      delay: 0.099574
+#      dt: 0.001
+#      timeout: 0.001
+#      angle1: 40
+#      angle2: 2
+#      publish_rate: 50
+#      max_track_target_vel: 15.0
 
   shooter_controller:
     type: rm_shooter_controllers/Controller
