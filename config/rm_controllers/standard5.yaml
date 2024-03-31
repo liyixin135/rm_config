@@ -81,7 +81,7 @@ controllers:
     type: rm_gimbal_controllers/Controller
     yaw:
       joint: "yaw_joint"
-      pid: { p: 0.45, i: 20.0, d: 0.0, i_clamp_max: 0.15, i_clamp_min: -0.15, antiwindup: true, publish_state: true }
+      pid: { p: 0.5, i: 20.0, d: 0.0, i_clamp_max: 0.15, i_clamp_min: -0.15, antiwindup: true, publish_state: true }
       k_chassis_vel: 0.032
       k_v: 1.0
       resistance_compensation:
@@ -90,10 +90,10 @@ controllers:
         effort_dead_zone: 0.06
     pitch:
       joint: "pitch_joint"
-      pid: { p: 0.5, i: 8.0, d: 0.0, i_clamp_max: 0.1, i_clamp_min: -0.1, antiwindup: true, publish_state: true }
+      pid: { p: 0.55, i: 20.0, d: 0.0, i_clamp_max: 0.28, i_clamp_min: -0.28, antiwindup: true, publish_state: true }
       k_v: 1.0
-    pid_yaw_pos: { p: 30.0, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true, max_output: 99 }
-    pid_pitch_pos: { p: 42.0, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true, max_output: 99 }
+    pid_yaw_pos: { p: 19.0, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true, max_output: 99 }
+    pid_pitch_pos: { p: 33.5, i: 0, d: 0.0, i_max: 0.0, i_min: 0.0, antiwindup: true, publish_state: true, max_output: 99 }
     gimbal_des_vel:
       yaw:
         lp_cutoff_frequency: 100
