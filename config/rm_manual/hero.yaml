@@ -37,8 +37,8 @@ rm_manual:
     gyro_rotate_reduction: 0.70
   gimbal:
     topic: "/controllers/gimbal_controller/command"
-    max_yaw_vel: 10.00
-    max_pitch_vel: 10.00
+    max_yaw_vel: 6.00
+    max_pitch_vel: 6.00
     gimbal_scale: 5
     track_timeout: 0.5
     eject_sensitivity: 0.1
@@ -72,12 +72,12 @@ rm_manual:
       type: "ID1_42MM"
   scope:
     topic: "/controllers/scope_controller/command"
-    on_pos: 2.32
+    on_pos: 2.284875
     off_pos: 0.1
   image_transmission:
     topic: "/controllers/image_transmission_controller/command"
     on_pos: -0.69
-    off_pos: -0.23
+    off_pos: -0.327505
   detection_switch:
     fail_limit: 10
     service_name: "/Processor/status_switch"
