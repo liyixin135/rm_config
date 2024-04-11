@@ -40,6 +40,15 @@ rm_referee:
       - name: "capacity_boundary_r"
         config: { type: "line", width: 2, color: "green",
                   start_position: [ 1210, 110 ], end_position: [ 1210, 90 ] }
+      - name: "outpose_base_up"
+        config: { type: "line", width: 3, color: "purple",
+                  start_position: [ 904, 423 ], end_position: [ 977, 423 ] }
+      - name: "outpose_base_down"
+        config: { type: "line", width: 3, color: "purple",
+                  start_position: [ 904, 397 ], end_position: [ 977, 397 ] }
+      - name: "outpose_mid"
+        config: { type: "line", width: 3, color: "purple",
+                  start_position: [ 941, 397 ], end_position: [ 941, 423 ] }
       #      - name: "base_up"
       #        config: { type: "line", width: 3, color: "purple",
       #                  start_position: [ 890, 614 ], end_position: [ 1030, 614 ] }
