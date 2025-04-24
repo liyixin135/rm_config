@@ -14,12 +14,16 @@ rm_manual:
       - [ 50.0,99.0 ]
     safety_power: 60
     capacitor_threshold: 0.3
-    capacitor_gyro_threshold: 0.5
+    enable_cap_gyro_threshold: 0.8
+    disable_cap_gyro_threshold: 0.7
     charge_power: 20
     extra_power: 40
+    standard_power: 220
     burst_power: 220
+    max_power_limit: 120
     buffer_threshold: 10
-    power_gain: 0
+    power_gain: 0.0
+    total_burst_time: 20
     is_new_capacitor: true
   vel:
     topic: "/cmd_vel"
