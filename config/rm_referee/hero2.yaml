@@ -16,7 +16,7 @@ rm_referee:
       - name: "target"
         config: { start_position: [ 200, 750 ], size: 15, width: 2, title: "target: " }
       - name: "target_view_angle"
-        config: { type: "rectangle", start_position: [ 780, 719 ], end_position: [ 1123,447 ], width: 3 }
+        config: { type: "rectangle", start_position: [ 822, 654 ], end_position: [ 1076,858 ], width: 3 }
       - name: "friction_speed"
         config: { type: "int_num", start_position: [ 1190, 650 ], size: 20, width: 2 ,color: "yellow" }
     time_change:
@@ -25,6 +25,8 @@ rm_referee:
       - name: "capacitor"
         config: { type: "line", width: 5, delay: 0.2,
                   start_position: [ 610, 100 ], end_position: [ 1210, 100 ] }
+      - name: "image_transmission"
+        config: { type: "string", start_position: [ 775, 180 ], size: 25, width: 4, delay: 0.6, title: "image_transmission: " }
       - name: "pitch"
         config: { type: "string", start_position: [ 775, 220 ], size: 25, width: 4, delay: 0.6, title: "pitch: " }
       - name: "lane_line"
@@ -45,12 +47,12 @@ rm_referee:
       - name: "capacity_boundary_r"
         config: { type: "line", width: 2, color: "green",
                   start_position: [ 1210, 110 ], end_position: [ 1210, 90 ] }
-      - name: "base_up"
+      - name: "base_x"
         config: { type: "line", width: 2, color: "purple",
-                  start_position: [ 890, 412 ], end_position: [ 1030, 412 ] }
-      - name: "base_down"
+                  start_position: [ 982, 473 ], end_position: [ 1062, 473 ] }
+      - name: "base_y"
         config: { type: "line", width: 2, color: "purple",
-                  start_position: [ 890, 384 ], end_position: [ 1030, 384 ] }
+                  start_position: [ 1022, 483 ], end_position: [ 1022, 463 ] }
       - name: "ring_highland_up"
         config: { type: "line", width: 3, color: "yellow",
                   start_position: [ 874, 316 ], end_position: [ 1046, 316 ] }
@@ -65,9 +67,9 @@ rm_referee:
       - name: "bullet_string"
         config: { type: "string", start_position: [ 30, 600 ], size: 25, width: 2, color: "pink", content: "BULLET:" }
     flash:
-      - name: "spin"
-        config: { start_position: [ 850, 750 ], size: 20, width: 2,
-                  color: "yellow", content: "please spin!!", delay: 1.0 }
+      - name: "deploy"
+        config: { start_position: [ 1500, 750 ], size: 70, width: 2,
+                  color: "yellow", content: "Fire!!", delay: 0.3 }
       - name: "cover"
         config: { start_position: [ 830, 700 ], size: 25, width: 2,
                   color: "green", content: "cover open!!", delay: 0.8 }
